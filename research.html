@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research | Venanzio Cichella</title>
-  <meta name="description" content="Research by Venanzio Cichella: cooperative autonomous systems, robust and adaptive control, optimal motion planning, and control of artificial muscles.">
+  <meta name="description" content="Research by Venanzio Cichella: optimal motion planning with Bernstein polynomials, cooperative autonomous systems, airspace autonomy, underwater vehicles, and soft robots.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,6 +20,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="research.html" aria-current="page">Research</a></li>
         <li><a href="publications.html">Publications</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
         <li><a href="lab.html">Lab</a></li>
         <li><a href="news.html">News</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -31,37 +32,94 @@
 <main id="main">
   <div class="wrap">
     <h1>Research</h1>
-    <p class="lead">My research is on planning and control of autonomous systems, from single vehicles to cooperating teams. With my students in the <a href="lab.html">CAS Lab</a>, I work in four main areas.</p>
+    <p class="lead">I study how to plan and control autonomous vehicles, alone and in teams, so that they complete missions safely, on time, and in real time. My group combines optimal control, polynomial approximation, and graph theory, and tests the results on aerial, ground, underwater, and soft robots.</p>
+    <p class="meta">On this page: <a href="#planning">Optimal motion planning</a> &middot; <a href="#cooperation">Cooperative autonomous systems</a> &middot; <a href="#airspace">Autonomy in the airspace</a> &middot; <a href="#underwater">Underwater vehicles</a> &middot; <a href="#soft">Soft robots</a> &middot; <a href="#software">Software</a> &middot; <a href="#sponsors">Sponsors</a></p>
 
-    <section class="area">
-      <h3>Cooperative Autonomous Systems</h3>
-      <p>We develop, implement, and test cooperative planning and control strategies for the safe execution of multi-vehicle missions in real-world environments.</p>
-      <p><a href="https://cichella.lab.uiowa.edu/research/cooperative-autonomous-systems">Details</a></p>
+    <section class="area" id="planning">
+      <h2>Optimal motion planning with Bernstein polynomials</h2>
+      <p>Many planning problems for autonomous vehicles are optimal control problems: find the trajectory that minimizes time, energy, or risk while respecting the vehicle&rsquo;s dynamics and avoiding obstacles and other vehicles. These problems are infinite-dimensional and must be approximated before a computer can solve them.</p>
+      <p>My group develops direct methods that approximate trajectories with Bernstein (B&eacute;zier) polynomials. Their geometric properties make it cheap to check constraints such as minimum separation between vehicles over the whole trajectory, not just at sample points, which guarantees safety at low computational cost. We have proved that these approximations converge to the true optimal solution, and we have extended them to composite polynomials, uncertain environments, and surfaces for continuum robots.</p>
+      <p>To reach real-time speeds, we pair these methods with learning: transformer networks that predict Bernstein trajectories, and collision-free robot learning (PolyFusion, CoRL 2026). With colleagues at the University of Bologna, we also use polynomial internal models for robust output regulation. A book collecting this work, <em>Bernstein/B&eacute;zier Polynomials in Control, Estimation, and Planning</em>, is forthcoming from Springer Nature in 2027.</p>
+      <figure>
+        <img src="images/research/bebot-350-vehicles.jpg" alt="Two 3D plots of many colored trajectories ending in target formations" width="1200" height="477" loading="lazy">
+        <figcaption>Collision-free trajectories for large teams of vehicles, generated with BeBOT, my group&rsquo;s Bernstein polynomial toolkit.</figcaption>
+      </figure>
     </section>
 
-    <section class="area">
-      <h3>Robust and Adaptive Control</h3>
-      <p>We design and test inner-loop adaptive controllers for complex maneuvers of underwater vehicles.</p>
-      <p><a href="https://cichella.lab.uiowa.edu/research/robust-and-adaptive-control">Details</a></p>
+    <section class="area" id="cooperation">
+      <h2>Cooperative autonomous systems</h2>
+      <p>A team of vehicles can be more robust, reliable, and efficient than a single heavily equipped vehicle, but only if the team can coordinate despite vehicle failures, faulty or intermittent communication, and complex environments. My work integrates three pieces into one framework with guarantees of safety and robustness:</p>
+      <ul class="bare">
+        <li><strong>Trajectory generation</strong>: planning feasible, deconflicted paths for every vehicle.</li>
+        <li><strong>Time coordination</strong>: using graph theory so vehicles arrive together over time-varying, directed communication networks.</li>
+        <li><strong>Collision avoidance</strong>: reacting to unexpected obstacles using limited information, such as line-of-sight angle or vision with intermittent measurements.</li>
+      </ul>
+      <p>This work began in collaboration with the University of Illinois Urbana-Champaign, the Naval Postgraduate School, and Instituto Superior T&eacute;cnico in Lisbon, and has been applied to cooperative road search, target monitoring, and localization of avalanche victims.</p>
+      <figure>
+        <img src="images/research/cas-framework.jpg" alt="Block diagram: motion planning feeds coordination, which feeds virtual target tracking for each vehicle, connected through a vehicle network" width="1200" height="533" loading="lazy">
+        <figcaption>The cooperative control framework: motion planning, coordination over the vehicle network, and tracking control on each vehicle.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/research/multi-uav.jpg" alt="Three UAVs cooperatively searching a mountain road, with their flight paths overlaid on a satellite map" width="1200" height="546" loading="lazy">
+        <figcaption>Three UAVs coordinate to search a road, with paths that adapt as the mission changes.</figcaption>
+      </figure>
     </section>
 
-    <section class="area">
-      <h3>Optimal Motion Planning</h3>
-      <p>We develop and implement solutions to optimal motion planning problems for multi-vehicle missions.</p>
-      <p><a href="https://cichella.lab.uiowa.edu/research/optimal-motion-planning">Details</a></p>
+    <section class="area" id="airspace">
+      <h2>Autonomy in the airspace</h2>
+      <p>As autonomous aircraft become common, they must share airspace with piloted aircraft, especially near airports. With NASA, my group develops trajectory optimization for aircraft approaching and leaving airports, including pilot-centric planning for autonomous final approach and learning-based trajectory generation that runs in real time. With NSF support, we are also integrating drones and crewed aircraft near airports, and engineering safe AI for decision making and motion planning in autonomous vehicles.</p>
     </section>
 
-    <section class="area">
-      <h3>Control of Artificial Muscles</h3>
-      <p>In collaboration with the <a href="https://lamuta.lab.uiowa.edu">SMMS Lab</a>, we develop robotic arms driven by twisted and coiled artificial muscles.</p>
-      <p><a href="https://cichella.lab.uiowa.edu/research/control-artificial-muscles">Details</a></p>
+    <section class="area" id="underwater">
+      <h2>Control of underwater vehicles</h2>
+      <p>Underwater vehicles are hard to control at low speed, because control surfaces lose authority, and near the free surface, where suction forces and waves pull the vehicle up and pitch it bow-down. Together with researchers at IIHR&ndash;Hydroscience &amp; Engineering, my group designs robust and adaptive controllers with guaranteed performance in these conditions, including autopilots for depth and pitch in waves and adaptive reference management with model predictive control.</p>
+      <p>We derive vehicle models from computational fluid dynamics and test the controllers in REX, a University of Iowa code that resolves the hydrodynamics and body motion together, so the controller is evaluated against realistic physics rather than a simplified model. Recent work extends these ideas to a biomimetic robotic fish.</p>
+      <div class="figrow">
+        <figure>
+          <img src="images/research/joubert-bb2.jpg" alt="Side, rear, and front views of a generic submarine hull" width="1200" height="805" loading="lazy">
+          <figcaption>The Joubert BB2 generic submarine used to design and test controllers.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/research/rex-turn-near-surface.jpg" alt="CFD visualization of a submarine turning just below the water surface, with vortices shed from its hull" width="1200" height="894" loading="lazy">
+          <figcaption>REX simulation of the BB2 in a turn near the surface.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="area" id="soft">
+      <h2>Soft robots and artificial muscles</h2>
+      <p>With Caterina Lamuta and her SMMS Lab, my group models and controls robots driven by twisted and coiled artificial muscles (TCAMs). These fibers are cheap, light, strong, and need very little voltage, which makes them attractive for wearable and bioinspired devices, but their behavior is nonlinear and hard to predict.</p>
+      <p>We build physics-based models using Cosserat rod theory, which earned a 2026 <em>Smart Materials and Structures</em> Best Paper Award, and use them for robust control and path planning. Applications include an octopus-inspired soft arm, a wrist rehabilitation exoskeleton, a soft end-effector for in-space assembly, and powered orthotic devices for the upper limb.</p>
+      <figure class="narrow">
+        <img src="images/research/orthotic-arm.jpg" alt="Left: forearm muscles color-coded by name. Right: an orthotic sleeve with artificial muscles placed along the same paths" width="1200" height="851" loading="lazy">
+        <figcaption>A powered orthotic device places artificial muscles (b) along the paths of the forearm&rsquo;s skeletal muscles (a).</figcaption>
+      </figure>
+    </section>
+
+    <section class="area" id="software">
+      <h2>Software</h2>
+      <p><a href="https://github.com/caslabuiowa/BeBOT">BeBOT</a> (Bernstein/B&eacute;zier Optimal Trajectories) is my group&rsquo;s open-source toolkit for generating optimal trajectories for one or many autonomous vehicles. It is available in Python, with <a href="https://github.com/caslabuiowa/BeBOT_MATLAB">MATLAB</a>, <a href="https://github.com/caslabuiowa/BeBOT_cpp">C++</a>, and <a href="https://github.com/caslabuiowa/BeBOT_CasADi">CasADi</a> versions. More code is on the <a href="https://github.com/caslabuiowa">lab GitHub</a>.</p>
+    </section>
+
+    <section class="area" id="sponsors">
+      <h2>Sponsors</h2>
+      <p>My research has been supported by:</p>
+      <ul class="sponsors">
+        <li>National Science Foundation (NSF)</li>
+        <li>Office of Naval Research (ONR)</li>
+        <li>NASA</li>
+        <li>NASA Iowa Space Grant Consortium</li>
+        <li>Air Force Research Laboratory (AFRL)</li>
+        <li>Amazon</li>
+        <li>Automotive Research Center, University of Michigan</li>
+      </ul>
     </section>
   </div>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <p>&copy; 2026 Venanzio Cichella. <a href="https://engineering.uiowa.edu">College of Engineering</a>, <a href="https://uiowa.edu">The University of Iowa</a>.</p>
+    <p>&copy; 2026 Venanzio Cichella. College of Engineering, The University of Iowa.</p>
   </div>
 </footer>
 </body>

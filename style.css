@@ -157,3 +157,39 @@ ul.timeline span { color: var(--muted); font-size: .9rem; font-weight: 600; text
   .portrait { max-width: 160px; }
   ul.timeline li { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* Lab people */
+.person img, .person .avatar {
+  display: block; width: 100%; max-width: 160px; height: auto; aspect-ratio: 1; object-fit: cover;
+  border-radius: 4px; margin-bottom: .6rem;
+}
+.person .avatar {
+  display: grid; place-items: center; background: var(--rule); color: var(--muted);
+  font-family: Georgia, serif; font-size: 2.25rem; font-weight: 700;
+}
+
+/* Research figures */
+.area h2 { border-bottom: 0; margin-top: .5rem; }
+figure { margin: 1.25rem 0; }
+figure img { display: block; width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--rule); background: #fff; }
+figure.narrow { max-width: 520px; }
+figcaption { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
+.figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.figrow figure { margin: 0; }
+ul.sponsors { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0; }
+ul.sponsors li { border: 1px solid var(--rule); border-radius: 4px; padding: .3rem .75rem; font-size: .95rem; }
+
+/* Publications */
+.feature {
+  border: 1px solid var(--rule); border-left: 4px solid var(--gold); border-radius: 4px;
+  padding: 1.1rem 1.25rem .4rem; margin: 0 0 1rem;
+}
+.feature h3 { margin: .1rem 0 .5rem; font-size: 1.3rem; }
+.kicker { text-transform: uppercase; letter-spacing: .06em; font-size: .8rem; font-weight: 600; color: var(--muted); margin: 0; }
+h3.year { font-size: 1rem; color: var(--muted); margin: 1.25rem 0 .4rem; }
+.tag { font-size: .8rem; border: 1px solid var(--rule); border-radius: 999px; padding: 0 .5rem; color: var(--muted); white-space: nowrap; }
+details summary { cursor: pointer; color: var(--link); margin-bottom: .75rem; }
+
+@media (max-width: 640px) {
+  .figrow { grid-template-columns: 1fr; }
+}
