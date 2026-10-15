@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Venanzio Cichella | University of Iowa</title>
-  <meta name="description" content="Venanzio Cichella is an Associate Professor of Mechanical Engineering at the University of Iowa, working on planning and control of cooperative autonomous systems.">
+  <meta name="description" content="Venanzio Cichella is an Associate Professor of Mechanical Engineering at the University of Iowa, whose research program, Resilient Autonomy, develops mission-driven planning, control, and learning for autonomous systems.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,8 +35,13 @@
       <img class="portrait" src="images/venanzio.jpg" alt="Portrait of Venanzio Cichella" width="220" height="220">
       <div>
         <h1>Venanzio Cichella</h1>
-        <p class="lead">I am an Associate Professor in the Department of Mechanical Engineering at the University of Iowa, where I work on planning and control for teams of autonomous vehicles.</p>
-        <p>My research spans cooperative control, collision avoidance, optimal control, machine learning, and human-centered design of autonomous vehicles. I direct the <a href="lab.html">Cooperative Autonomous Systems Lab</a>, where my students and I take these methods from theory to experiments on real robots.</p>
+        <p class="role">Associate Professor of Mechanical Engineering, University of Iowa<br>Director, <a href="lab.html">Cooperative Autonomous Systems Lab</a></p>
+        <div class="program">
+          <p class="kicker">Research program</p>
+          <p class="program-title">Resilient Autonomy</p>
+          <p class="program-sub">Mission-driven planning, control, and learning for autonomous systems.</p>
+        </div>
+        <p>I develop the theoretical and computational foundations that allow autonomous systems to operate safely, cooperatively, and reliably in complex, uncertain, and dynamic environments. My group works from control theory and numerical optimization to experiments on aerial, underwater, ground, and soft robots.</p>
         <ul class="linkrow">
           <li><a href="https://scholar.google.com/citations?hl=en&amp;user=tYQR_0MAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar</a></li>
           <li><a href="https://www.researchgate.net/profile/Venanzio-Cichella">ResearchGate</a></li>
@@ -45,6 +50,46 @@
         </ul>
       </div>
     </div>
+
+    <h2>Research program</h2>
+    <p>An autonomous system is dependable only if the plan it computes, the controller that executes it, and the vehicles it coordinates with all hold up when conditions change. I treat these as one problem. Optimal control produces trajectories that respect dynamics and safety constraints; robust and adaptive control keeps the vehicle on them despite disturbances and model error; learning makes the computation fast enough to re-plan in real time; and cooperative control extends the guarantees from one vehicle to a team that shares the environment with people. Safety and resilience, meaning the ability to keep performing the mission when the environment, the communication network, or the vehicle itself changes, are the objectives that connect this work.</p>
+    <ul class="thrusts">
+      <li>
+        <h3><a href="research.html#planning">Optimal control and motion planning</a></h3>
+        <p>Direct methods based on Bernstein polynomials that make trajectory optimization tractable, with convergence guarantees and constraint checks over the entire trajectory.</p>
+      </li>
+      <li>
+        <h3><a href="research.html#robust">Robust and adaptive control</a></h3>
+        <p>Controllers with guaranteed performance under uncertainty, disturbances, and changing dynamics, from underwater vehicles in waves to soft robots driven by artificial muscles.</p>
+      </li>
+      <li>
+        <h3><a href="research.html#learning">Learning-enabled autonomy</a></h3>
+        <p>Transformer networks and robot learning built on Bernstein trajectories, so that learned planners run in real time while keeping constraints such as collision avoidance explicit.</p>
+      </li>
+      <li>
+        <h3><a href="research.html#cooperation">Cooperative autonomous systems</a></h3>
+        <p>Trajectory generation, time coordination over time-varying networks, and collision avoidance for teams of vehicles with limited, intermittent communication.</p>
+      </li>
+      <li>
+        <h3><a href="research.html#teaming">Human-autonomy teaming</a></h3>
+        <p>Autonomous aircraft that share airspace with piloted aircraft near airports, pilot-centric trajectory optimization, and studies of how people interact with nearby drones.</p>
+      </li>
+    </ul>
+    <div class="figstrip">
+      <figure>
+        <img src="images/research/multi-uav.jpg" alt="Three UAVs cooperatively searching a mountain road, with their flight paths overlaid on a satellite map" width="1200" height="546" loading="lazy">
+        <figcaption>Cooperative road search by three UAVs.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/research/bebot-350-vehicles.jpg" alt="Two 3D plots of many colored trajectories ending in target formations" width="1200" height="477" loading="lazy">
+        <figcaption>Collision-free trajectories for large vehicle teams.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/research/rex-turn-near-surface.jpg" alt="CFD visualization of a submarine turning just below the water surface" width="1200" height="894" loading="lazy">
+        <figcaption>Underwater vehicle control near the free surface.</figcaption>
+      </figure>
+    </div>
+    <p><a href="research.html">More about my research</a></p>
 
     <h2>Background</h2>
     <ul class="timeline">
@@ -68,22 +113,11 @@
       <li><span>2015</span> <div>Outstanding Achievement Award, College of Engineering, University of Illinois Urbana-Champaign</div></li>
     </ul>
 
-    <h2>Research interests</h2>
-    <ul class="bare">
-      <li>Optimal motion planning and numerical optimal control with Bernstein polynomials</li>
-      <li>Cooperative control and time coordination of multi-vehicle systems</li>
-      <li>Collision avoidance with safety guarantees</li>
-      <li>Safe, learning-enabled autonomy, including autonomous aircraft near airports</li>
-      <li>Robust and adaptive control of underwater vehicles</li>
-      <li>Modeling and control of soft robots and artificial muscles</li>
-    </ul>
-    <p><a href="research.html">More about my research</a></p>
-
     <h2>Recent news</h2>
     <div class="news-item">
-      <h3>Iowa Now features my NSF project on underwater autonomy</h3>
+      <h3>New NSF grant on safe AI for autonomous underwater vehicles</h3>
       <time datetime="2026-10-13">October 13, 2026</time>
-      <p>The University of Iowa highlighted my new three-year, $575,000 NSF project on faster decision making and motion planning for self-driving underwater vehicles, with experiments planned at the IIHR Wave Basin and area lakes. <a href="https://now.uiowa.edu/news/2026/10/ui-professor-looks-develop-formula-quicker-response-self-driving-underwater-vehicles">Read the Iowa Now story</a>.</p>
+      <p>My group received a three-year, $575,000 NSF award, &ldquo;Engineering Safe Artificial Intelligence for Autonomous Vehicle Decision Making and Motion Planning&rdquo; (2026&ndash;2029). The University of Iowa highlighted the project, which targets faster decision making and motion planning for self-driving underwater vehicles, with experiments planned at the IIHR Wave Basin and area lakes. <a href="https://now.uiowa.edu/news/2026/10/ui-professor-looks-develop-formula-quicker-response-self-driving-underwater-vehicles">Read the Iowa Now story</a>.</p>
     </div>
     <div class="news-item">
       <h3>Invited talk at Colorado State University</h3>
@@ -91,15 +125,16 @@
       <p>I spoke on mission-driven, resilient field autonomy for cooperative autonomous systems at the Department of Electrical and Computer Engineering, Colorado State University.</p>
     </div>
     <div class="news-item">
-      <h3>New NSF grant on safe AI for autonomous vehicles</h3>
-      <time datetime="2026">2026</time>
-      <p>My group received a three-year NSF award, &ldquo;Engineering Safe Artificial Intelligence for Autonomous Vehicle Decision Making and Motion Planning&rdquo; (2026&ndash;2029).</p>
-    </div>
-    <div class="news-item">
       <h3>Best Paper Award from <em>Smart Materials and Structures</em></h3>
       <time datetime="2026">2026</time>
       <p>Our paper with Amirreza Fahim Golestaneh and Caterina Lamuta on physics-based modeling of twisted and coiled artificial muscles using Cosserat rod theory received the journal&rsquo;s Best Paper Award in Soft Smart Materials.</p>
     </div>
+    <div class="news-item">
+      <h3>Book with Springer Nature</h3>
+      <time datetime="2026">2026</time>
+      <p>My book with Isaac Kaminer, Ant&oacute;nio Pascoal, and Naira Hovakimyan, <em>Bernstein/B&eacute;zier Polynomials in Control, Estimation, and Planning: From Theory to Practice</em>, is forthcoming from Springer Nature in 2027.</p>
+    </div>
+
     <p><a href="news.html">More news</a></p>
   </div>
 </main>
