@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research | Venanzio Cichella</title>
-  <meta name="description" content="Research by Venanzio Cichella: optimal motion planning with Bernstein polynomials, cooperative autonomous systems, airspace autonomy, underwater vehicles, and soft robots.">
+  <meta name="description" content="Resilient Autonomy, the research program of Venanzio Cichella: optimal control and motion planning, robust and adaptive control, learning-enabled autonomy, cooperative autonomous systems, and human-autonomy teaming.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,19 +31,63 @@
 
 <main id="main">
   <div class="wrap">
-    <h1>Research</h1>
-    <p class="lead">I develop resilient autonomous systems that can operate safely and effectively in contested, congested, and human-inhabited environments, drawing on control theory, optimal and adaptive control, and machine learning, and demonstrating these capabilities across aerial, underwater, ground, and soft robots.</p>
-    <p class="meta">On this page: <a href="#planning">Optimal motion planning</a> &middot; <a href="#cooperation">Cooperative autonomous systems</a> &middot; <a href="#airspace">Autonomy in the airspace</a> &middot; <a href="#underwater">Underwater vehicles</a> &middot; <a href="#soft">Soft robots</a> &middot; <a href="#software">Software</a> &middot; <a href="#sponsors">Sponsors</a></p>
+    <p class="kicker">Research program</p>
+    <h1>Resilient Autonomy</h1>
+    <p class="program-sub">Mission-driven planning, control, and learning for autonomous systems.</p>
+    <p class="lead">I develop the theoretical and computational foundations that allow autonomous systems to operate safely, cooperatively, and reliably in complex, uncertain, and dynamic environments, including contested, congested, and human-inhabited ones.</p>
+    <p>Resilience is not a property of any single algorithm. A trajectory optimizer that ignores model error, a controller that cannot re-plan, or a team that fails when one communication link drops will each break the mission in a different way. My research therefore integrates planning, control, learning, and cooperation, with safety and resilience as the objectives that tie them together:</p>
+    <ul class="bare">
+      <li><strong>Optimal control and motion planning</strong> computes trajectories that satisfy the vehicle&rsquo;s dynamics and safety constraints, with efficient numerical methods whose approximations provably converge.</li>
+      <li><strong>Robust and adaptive control</strong> keeps the vehicle on those trajectories despite disturbances, uncertainty, and changing dynamics.</li>
+      <li><strong>Learning-enabled autonomy</strong> makes planning fast enough for real-time decisions, while keeping the structure that makes constraints such as collision avoidance explicit.</li>
+      <li><strong>Cooperative autonomous systems</strong> extend these guarantees from one vehicle to teams that coordinate over limited, intermittent communication.</li>
+      <li><strong>Human-autonomy teaming</strong> lets autonomous systems operate alongside pilots, operators, and other people in the same environment.</li>
+    </ul>
+    <p>The common thread is a path from foundational control theory to systems that run on hardware. I test these ideas on aerial vehicles, underwater vehicles, multi-robot teams, and soft robots, much of it in the <a href="lab.html">Cooperative Autonomous Systems Lab</a> and with collaborators at IIHR&ndash;Hydroscience &amp; Engineering, NASA, and partner universities.</p>
+    <p class="meta">On this page: <a href="#planning">Optimal control and motion planning</a> &middot; <a href="#robust">Robust and adaptive control</a> &middot; <a href="#learning">Learning-enabled autonomy</a> &middot; <a href="#cooperation">Cooperative autonomous systems</a> &middot; <a href="#teaming">Human-autonomy teaming</a> &middot; <a href="#software">Software</a> &middot; <a href="#sponsors">Sponsors</a></p>
 
     <section class="area" id="planning">
-      <h2>Optimal motion planning with Bernstein polynomials</h2>
+      <h2>Optimal control and motion planning</h2>
       <p>Many planning problems for autonomous vehicles are optimal control problems: find the trajectory that minimizes time, energy, or risk while respecting the vehicle&rsquo;s dynamics and avoiding obstacles and other vehicles. These problems are infinite-dimensional and must be approximated before a computer can solve them.</p>
       <p>My group develops direct methods that approximate trajectories with Bernstein (B&eacute;zier) polynomials. Their geometric properties make it cheap to check constraints such as minimum separation between vehicles over the whole trajectory, not just at sample points, which guarantees safety at low computational cost. We have proved that these approximations converge to the true optimal solution, and we have extended them to composite polynomials, uncertain environments, and surfaces for continuum robots.</p>
-      <p>To reach real-time speeds, we pair these methods with learning: transformer networks that predict Bernstein trajectories, and collision-free robot learning (PolyFusion, CoRL 2026). With colleagues at the University of Bologna, we also use polynomial internal models for robust output regulation. A book collecting this work, <em>Bernstein/B&eacute;zier Polynomials in Control, Estimation, and Planning</em>, is forthcoming from Springer Nature in 2027.</p>
+      <p>With colleagues at the University of Bologna, we also use polynomial internal models for robust output regulation. A book collecting this work, <em>Bernstein/B&eacute;zier Polynomials in Control, Estimation, and Planning</em>, is forthcoming from Springer Nature in 2027.</p>
       <figure>
         <img src="images/research/bebot-350-vehicles.jpg" alt="Two 3D plots of many colored trajectories ending in target formations" width="1200" height="477" loading="lazy">
         <figcaption>Collision-free trajectories for large teams of vehicles, generated with BeBOT, my group&rsquo;s Bernstein polynomial toolkit.</figcaption>
       </figure>
+    </section>
+
+    <section class="area" id="robust">
+      <h2>Robust and adaptive control</h2>
+      <p>A planned trajectory is only useful if the vehicle can follow it when the real system differs from its model. My group designs robust and adaptive controllers, including L1 adaptive control and adaptive reference management with model predictive control, that come with performance guarantees under disturbances, uncertainty, and changing dynamics. Two platforms drive much of this work.</p>
+
+      <h3 id="underwater">Underwater vehicles</h3>
+      <p>Underwater vehicles are hard to control at low speed, because control surfaces lose authority, and near the free surface, where suction forces and waves pull the vehicle up and pitch it bow-down. Together with researchers at IIHR&ndash;Hydroscience &amp; Engineering, my group designs controllers for these conditions, including autopilots for depth and pitch in waves and adaptive reference management with model predictive control.</p>
+      <p>We derive vehicle models from computational fluid dynamics and test the controllers in REX, a University of Iowa code that resolves the hydrodynamics and body motion together, so the controller is evaluated against realistic physics rather than a simplified model. Recent work extends these ideas to a biomimetic robotic fish. With new NSF support, we are now working toward faster decision making and motion planning for autonomous underwater vehicles, with experiments planned at the IIHR Wave Basin.</p>
+      <div class="figrow">
+        <figure>
+          <img src="images/research/joubert-bb2.jpg" alt="Side, rear, and front views of a generic submarine hull" width="1200" height="805" loading="lazy">
+          <figcaption>The Joubert BB2 generic submarine used to design and test controllers.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/research/rex-turn-near-surface.jpg" alt="CFD visualization of a submarine turning just below the water surface, with vortices shed from its hull" width="1200" height="894" loading="lazy">
+          <figcaption>REX simulation of the BB2 in a turn near the surface.</figcaption>
+        </figure>
+      </div>
+
+      <h3 id="soft">Soft robots and artificial muscles</h3>
+      <p>With Caterina Lamuta and her SMMS Lab, my group models and controls robots driven by twisted and coiled artificial muscles (TCAMs). These fibers are cheap, light, strong, and need very little voltage, which makes them attractive for wearable and bioinspired devices, but their behavior is nonlinear and hard to predict.</p>
+      <p>We build physics-based models using Cosserat rod theory, which earned a 2026 <em>Smart Materials and Structures</em> Best Paper Award, and use them for robust control and path planning. Applications include an octopus-inspired soft arm, a wrist rehabilitation exoskeleton, a soft end-effector for in-space assembly, and powered orthotic devices for the upper limb.</p>
+      <figure class="narrow">
+        <img src="images/research/orthotic-arm.jpg" alt="Left: forearm muscles color-coded by name. Right: an orthotic sleeve with artificial muscles placed along the same paths" width="1200" height="851" loading="lazy">
+        <figcaption>A powered orthotic device places artificial muscles (b) along the paths of the forearm&rsquo;s skeletal muscles (a).</figcaption>
+      </figure>
+    </section>
+
+    <section class="area" id="learning">
+      <h2>Learning-enabled autonomy</h2>
+      <p>Optimal control gives trajectories with clear guarantees, but solving the optimization online can be too slow for fast-changing missions. I use learning to close that gap without discarding the structure that makes the guarantees possible. Transformer networks trained to predict Bernstein polynomial trajectories return near-optimal solutions in real time, and we have applied the same idea to leg-based trajectory generation for autonomous aircraft near airports. In PolyFusion (CoRL 2026), we combine robot learning with Bernstein polynomials to produce collision-free motions.</p>
+      <p>With NSF support, my group is also engineering safe artificial intelligence for decision making and motion planning in autonomous vehicles, where the question is how to make learned components behave predictably inside a closed-loop system.</p>
     </section>
 
     <section class="area" id="cooperation">
@@ -65,35 +109,13 @@
       </figure>
     </section>
 
-    <section class="area" id="airspace">
-      <h2>Autonomy in the airspace</h2>
-      <p>As autonomous aircraft become common, they must share airspace with piloted aircraft, especially near airports. With NASA, my group develops trajectory optimization for aircraft approaching and leaving airports, including pilot-centric planning for autonomous final approach and learning-based trajectory generation that runs in real time. With NSF support, we are also integrating drones and crewed aircraft near airports, and engineering safe AI for decision making and motion planning in autonomous vehicles.</p>
-    </section>
-
-    <section class="area" id="underwater">
-      <h2>Control of underwater vehicles</h2>
-      <p>Underwater vehicles are hard to control at low speed, because control surfaces lose authority, and near the free surface, where suction forces and waves pull the vehicle up and pitch it bow-down. Together with researchers at IIHR&ndash;Hydroscience &amp; Engineering, my group designs robust and adaptive controllers with guaranteed performance in these conditions, including autopilots for depth and pitch in waves and adaptive reference management with model predictive control.</p>
-      <p>We derive vehicle models from computational fluid dynamics and test the controllers in REX, a University of Iowa code that resolves the hydrodynamics and body motion together, so the controller is evaluated against realistic physics rather than a simplified model. Recent work extends these ideas to a biomimetic robotic fish.</p>
-      <div class="figrow">
-        <figure>
-          <img src="images/research/joubert-bb2.jpg" alt="Side, rear, and front views of a generic submarine hull" width="1200" height="805" loading="lazy">
-          <figcaption>The Joubert BB2 generic submarine used to design and test controllers.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/research/rex-turn-near-surface.jpg" alt="CFD visualization of a submarine turning just below the water surface, with vortices shed from its hull" width="1200" height="894" loading="lazy">
-          <figcaption>REX simulation of the BB2 in a turn near the surface.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="area" id="soft">
-      <h2>Soft robots and artificial muscles</h2>
-      <p>With Caterina Lamuta and her SMMS Lab, my group models and controls robots driven by twisted and coiled artificial muscles (TCAMs). These fibers are cheap, light, strong, and need very little voltage, which makes them attractive for wearable and bioinspired devices, but their behavior is nonlinear and hard to predict.</p>
-      <p>We build physics-based models using Cosserat rod theory, which earned a 2026 <em>Smart Materials and Structures</em> Best Paper Award, and use them for robust control and path planning. Applications include an octopus-inspired soft arm, a wrist rehabilitation exoskeleton, a soft end-effector for in-space assembly, and powered orthotic devices for the upper limb.</p>
-      <figure class="narrow">
-        <img src="images/research/orthotic-arm.jpg" alt="Left: forearm muscles color-coded by name. Right: an orthotic sleeve with artificial muscles placed along the same paths" width="1200" height="851" loading="lazy">
-        <figcaption>A powered orthotic device places artificial muscles (b) along the paths of the forearm&rsquo;s skeletal muscles (a).</figcaption>
-      </figure>
+    <section class="area" id="teaming">
+      <h2>Human-autonomy teaming</h2>
+      <p>Autonomous systems rarely operate alone: they share airspace, roads, and workspaces with pilots, operators, and bystanders. My work in this area asks how an autonomous system should plan and act so that the people around it can anticipate its behavior and work with it.</p>
+      <h3 id="airspace">Autonomy in the airspace</h3>
+      <p>As autonomous aircraft become common, they must share airspace with piloted aircraft, especially near airports. With NASA, my group develops trajectory optimization for aircraft approaching and leaving airports, including pilot-centric planning for autonomous final approach and learning-based trajectory generation that runs in real time. With NSF support, we are also integrating drones and crewed aircraft near airports.</p>
+      <h3>People and nearby drones</h3>
+      <p>Earlier work with collaborators at the University of Illinois Urbana-Champaign used virtual-reality environments to study how people interact with small multirotors operating close to them, including in a residential setting.</p>
     </section>
 
     <section class="area" id="software">
