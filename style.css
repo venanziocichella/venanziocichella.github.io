@@ -196,37 +196,3 @@ details summary { cursor: pointer; color: var(--link); margin-bottom: .75rem; }
 @media (max-width: 640px) {
   .figrow { grid-template-columns: 1fr; }
 }
-
-/* Research program identity */
-.role { color: var(--muted); font-size: .98rem; margin: 0 0 .25rem; }
-.program { border-left: 4px solid var(--accent); padding: .3rem 0 .3rem 1rem; margin: 1.1rem 0 1.25rem; }
-.program .kicker { margin: 0; }
-.program-title {
-  font-family: Georgia, "Times New Roman", serif; font-size: 2rem; font-weight: 700;
-  line-height: 1.15; margin: .1rem 0 0;
-}
-.program-sub { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 1.2rem; color: var(--ink); margin: .3rem 0 1rem; }
-.program .program-sub { margin-bottom: 0; }
-.kicker + h1 { margin: .2rem 0 .1rem; }
-
-ul.thrusts {
-  list-style: none; padding: 0; margin: 1.25rem 0;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;
-}
-ul.thrusts li {
-  border: 1px solid var(--rule); border-top: 3px solid var(--accent); border-radius: 4px;
-  padding: .85rem 1rem .25rem;
-}
-ul.thrusts h3 { margin: 0 0 .35rem; font-size: 1.05rem; }
-ul.thrusts h3 a { color: var(--ink); text-decoration: none; }
-ul.thrusts h3 a:hover { color: var(--link); text-decoration: underline; }
-ul.thrusts p { font-size: .95rem; }
-
-.figstrip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.25rem 0; }
-.figstrip figure { margin: 0; }
-.figstrip img { aspect-ratio: 3 / 2; object-fit: contain; }
-
-@media (max-width: 640px) {
-  .program-title { font-size: 1.6rem; }
-  .figstrip { grid-template-columns: 1fr; }
-}
