@@ -188,6 +188,10 @@ ul.sponsors li { border: 1px solid var(--rule); border-radius: 4px; padding: .3r
   padding: 1.1rem 1.25rem .4rem; margin: 0 0 1rem;
 }
 .feature h3 { margin: .1rem 0 .5rem; font-size: 1.3rem; }
+.feature h4 { font-family: Georgia, "Times New Roman", serif; font-size: 1.1rem; margin: .1rem 0 .5rem; }
+.feature figure, .feature .figrow { margin: 0 0 1rem; }
+.area .feature { margin-top: 1.25rem; }
+#funded h3 { margin-top: 1.25rem; }
 .kicker { text-transform: uppercase; letter-spacing: .06em; font-size: .8rem; font-weight: 600; color: var(--muted); margin: 0; }
 h3.year { font-size: 1rem; color: var(--muted); margin: 1.25rem 0 .4rem; }
 .tag { font-size: .8rem; border: 1px solid var(--rule); border-radius: 999px; padding: 0 .5rem; color: var(--muted); white-space: nowrap; }
