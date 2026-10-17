@@ -76,16 +76,10 @@
         <p class="kicker">ONR</p>
         <h3>Adaptive maneuvering control of a generic submarine</h3>
         <p>Path-following and trajectory-tracking guidance laws, built on an inner-loop adaptive controller, steer a generic submarine along three-dimensional paths. The design uses a reduced-order model that is built and validated from computational fluid dynamics and accounts for the depth and wave effects that dominate near the free surface. <a href="https://doi.org/10.1016/j.conengprac.2023.105792">MacLin, Hammond, Cichella, and Martin, <em>Control Engineering Practice</em>, 2024</a></p>
-        <div class="figrow">
-          <figure>
-            <img src="images/research/joubert-bb2.jpg" alt="Side, rear, and front views of a generic submarine hull" width="1200" height="805" loading="lazy">
-            <figcaption>The Joubert BB2 generic submarine used to design and test controllers.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/research/rex-turn-near-surface.jpg" alt="CFD visualization of a submarine turning just below the water surface, with vortices shed from its hull" width="1200" height="894" loading="lazy">
-            <figcaption>REX simulation of the BB2 in a turn near the surface.</figcaption>
-          </figure>
-        </div>
+        <figure>
+          <video src="images/research/camera-planes.mp4" poster="images/research/camera-planes-poster.jpg" width="1280" height="694" autoplay muted loop playsinline controls preload="metadata" aria-label="Simulation of the yellow BB2 submarine maneuvering near the seabed, viewed from a camera behind the hull"></video>
+          <figcaption>Simulation of the Joubert BB2 maneuvering with the lab&rsquo;s reduced-order model.</figcaption>
+        </figure>
       </div>
 
       <div class="feature">
@@ -132,6 +126,7 @@
     <section class="area" id="software">
       <h2>Software</h2>
       <p><a href="https://github.com/caslabuiowa/BeBOT">BeBOT</a> (Bernstein/B&eacute;zier Optimal Trajectories) is my group&rsquo;s open-source toolkit for generating optimal trajectories for one or many autonomous vehicles. It is available in Python, with <a href="https://github.com/caslabuiowa/BeBOT_MATLAB">MATLAB</a>, <a href="https://github.com/caslabuiowa/BeBOT_cpp">C++</a>, and <a href="https://github.com/caslabuiowa/BeBOT_CasADi">CasADi</a> versions. More code is on the <a href="https://github.com/caslabuiowa">lab GitHub</a>.</p>
+      <p>We have also developed an accurate reduced-order model of the Joubert BB2 generic submarine, with <a href="https://github.com/caslabuiowa/IowaBB2model">Simulink and MATLAB implementations</a>.</p>
     </section>
 
     <section class="area" id="sponsors">
