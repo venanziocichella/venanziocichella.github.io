@@ -101,6 +101,16 @@
       <div class="feature">
         <h3>PDE-based optimal control with Bernstein surfaces</h3>
         <p>Many systems are governed by partial differential equations rather than ordinary ones, such as soft continuum robots whose shape evolves in both space and time. This work extends the Bernstein approach to these problems: Bernstein surfaces approximate the solution in space and time, so constraints on the shape, its curvature, and the surrounding obstacles can be enforced over the whole domain. It has been applied to path planning for continuum rods, to constrained planning for soft continuum robots, and to large multi-agent teams modeled as a continuum. <a href="https://doi.org/10.1109/OJCSYS.2025.3617288">Hammond, Lovett, Pugliese, Cichella, and Lamuta, <em>IEEE Open Journal of Control Systems</em>, 2025</a>; <a href="https://doi.org/10.1109/RoboSoft60065.2024.10521951">Hammond et al., IEEE RoboSoft 2024</a>; <a href="https://doi.org/10.1109/CDC57313.2025.11312044">Hammond et al., IEEE CDC 2025</a></p>
+        <div class="figrow">
+          <figure>
+            <img src="images/research/continuum-rod-two-obstacles.jpg" alt="3D plot of a continuum rod bending from a green initial shape to a red final shape between two spherical obstacles" width="900" height="900" loading="lazy">
+            <figcaption>A continuum rod planned around two obstacles: green is the initial shape, red the final pose.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/research/continuum-rod-three-obstacles.jpg" alt="3D plot of a continuum rod reaching a target pose between three spherical obstacles" width="900" height="900" loading="lazy">
+            <figcaption>Reaching a desired tip pose between three obstacles. From Hammond et al., IEEE RoboSoft 2024.</figcaption>
+          </figure>
+        </div>
       </div>
 
       <div class="feature">
@@ -112,6 +122,10 @@
         <p class="kicker">NASA</p>
         <h3>Autonomous aircraft near airports</h3>
         <p>With NASA, my group develops trajectory optimization for aircraft approaching and leaving airports, including pilot-centric planning for autonomous final approach and learning-based trajectory generation fast enough to run in real time. <a href="https://doi.org/10.2514/6.2025-3269">MacLin et al., AIAA Aviation 2025</a></p>
+        <figure class="narrow">
+          <img src="images/research/aircraft-transformer-trajectories.jpg" alt="Plot of many red trajectories that start from scattered initial positions inside a circle and merge into a single approach path to the runway" width="623" height="512" loading="lazy">
+          <figcaption>Approach trajectories generated in real time by a trained transformer from perturbed initial positions. From MacLin et al., AIAA Aviation 2025.</figcaption>
+        </figure>
       </div>
     </section>
 
