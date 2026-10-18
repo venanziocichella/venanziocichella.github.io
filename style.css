@@ -176,6 +176,8 @@ ul.timeline span { color: var(--muted); font-size: .9rem; font-weight: 600; text
 figure { margin: 1.25rem 0; }
 figure img, figure video { display: block; width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--rule); background: #fff; }
 figure.narrow { max-width: 520px; }
+.thrust { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 320px); gap: 2rem; align-items: start; }
+.thrust figure.comic { margin: 2.6rem 0 1rem; }
 figcaption { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
 .figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .figrow figure { margin: 0; }
@@ -198,4 +200,6 @@ details summary { cursor: pointer; color: var(--link); margin-bottom: .75rem; }
 
 @media (max-width: 640px) {
   .figrow { grid-template-columns: 1fr; }
+  .thrust { display: block; }
+  .thrust figure.comic { margin: 1.25rem 0; max-width: 420px; }
 }

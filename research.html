@@ -39,33 +39,43 @@
     <h2 id="umbrella">Resilient Cooperative Autonomy in Complex Environments</h2>
     <p>The program has three connected thrusts. Thrust&nbsp;1 makes individual vehicles dependable when their dynamics are uncertain. Thrust&nbsp;2 builds team-level coordination on those vehicle-level properties when information and communication are also unreliable. Thrust&nbsp;3 tests both on hardware and in realistic conditions, and the gaps it exposes become new questions for the theory.</p>
 
-    <section class="area" id="adaptation">
-      <p class="kicker">Thrust 1</p>
-      <h3>Learning and adaptation with guarantees</h3>
-      <p>A vehicle&rsquo;s dynamics change during a mission: payloads and environmental loads such as wind, currents, and waves vary, actuators saturate or behave nonlinearly, and operating conditions drift from those assumed at design time. This thrust develops adaptive and robust controllers, including L1 adaptive control, adaptive reference management, and robust output regulation, whose stability and performance properties are proved for explicitly stated classes of uncertainty.</p>
-      <p>Learning enters where it improves speed or model fidelity, for example transformer networks that predict optimal trajectories in real time. We pair learned components with structure from control theory, such as Bernstein polynomial representations whose constraints can be checked directly, and we claim guarantees only where the analysis supports them.</p>
-      <figure class="narrow">
+    <section class="area thrust" id="adaptation">
+      <div>
+        <p class="kicker">Thrust 1</p>
+        <h3>Learning and adaptation with guarantees</h3>
+        <p>A vehicle&rsquo;s dynamics change during a mission: payloads and environmental loads such as wind, currents, and waves vary, actuators saturate or behave nonlinearly, and operating conditions drift from those assumed at design time. This thrust develops adaptive and robust controllers, including L1 adaptive control, adaptive reference management, and robust output regulation, whose stability and performance properties are proved for explicitly stated classes of uncertainty.</p>
+        <p>Learning enters where it improves speed or model fidelity, for example transformer networks that predict optimal trajectories in real time. We pair learned components with structure from control theory, such as Bernstein polynomial representations whose constraints can be checked directly, and we claim guarantees only where the analysis supports them.</p>
+      </div>
+      <figure class="comic">
         <img src="images/research/learning-safety-comic.jpg" alt="Four-panel comic in which Cooper and Diane agree that a system should keep learning as the world changes, but never trade safety for a clever step; Cooper points at a car driving inside a glowing safe box, and Diane holds a chart labeled Safe Zones" width="1024" height="1024" loading="lazy">
         <figcaption>The thrust in four panels: keep learning as the world changes, but never at the price of safety.</figcaption>
       </figure>
     </section>
 
-    <section class="area" id="cooperation">
-      <p class="kicker">Thrust 2</p>
-      <h3>Cooperative autonomy under uncertainty</h3>
-      <p>Heterogeneous teams of aerial, ground, and underwater vehicles must decide what to do and when, even though each vehicle&rsquo;s model is imperfect, sensing is partial, and communication links drop in and out. This thrust develops cooperative planning and control that connects team-level objectives, such as coverage, search, arrival timing, and separation, to motions each vehicle can actually execute.</p>
-      <p>The framework couples three layers: optimal trajectory generation, time coordination over time-varying and directed communication networks, and decentralized collision avoidance with limited or intermittent measurements. Ongoing work addresses missions whose goals change during execution, coupling high-level decisions with motion planning.</p>
-      <figure class="narrow">
+    <section class="area thrust" id="cooperation">
+      <div>
+        <p class="kicker">Thrust 2</p>
+        <h3>Cooperative autonomy under uncertainty</h3>
+        <p>Heterogeneous teams of aerial, ground, and underwater vehicles must decide what to do and when, even though each vehicle&rsquo;s model is imperfect, sensing is partial, and communication links drop in and out. This thrust develops cooperative planning and control that connects team-level objectives, such as coverage, search, arrival timing, and separation, to motions each vehicle can actually execute.</p>
+        <p>The framework couples three layers: optimal trajectory generation, time coordination over time-varying and directed communication networks, and decentralized collision avoidance with limited or intermittent measurements. Ongoing work addresses missions whose goals change during execution, coupling high-level decisions with motion planning.</p>
+      </div>
+      <figure class="comic">
         <img src="images/research/cooperation-comic.jpg" alt="Four-panel comic in which Cooper and Diane reflect that cooperation does not require a shared language or history; Diane reads a compass, Cooper points at a maze-like map with an exit, and the two sit together studying a map" width="1024" height="1024" loading="lazy">
         <figcaption>The thrust in four panels: agents need not see the world the same way to move in the same direction.</figcaption>
       </figure>
     </section>
 
-    <section class="area" id="verified">
-      <p class="kicker">Thrust 3</p>
-      <h3>Verified autonomy in the real world</h3>
-      <p>Guarantees are useful only if they hold on real vehicles, despite sensor noise, actuator limits, communication delays, and conditions not anticipated by the model. This thrust bridges theory and practice by developing realistic models for analysis and testing, and implementing controllers and planners on physical platforms. We validate our methods through indoor and outdoor experiments, high-fidelity simulation, and testing across a diverse range of autonomous systems, including ground robots, surface and underwater vehicles, small aerial robots, and fixed-wing UAVs.</p>
-      <p>The goal is to develop resilient autonomy that monitors its safety margins, remains robust to disturbances and uncertainty, and recovers when operating conditions exceed design assumptions. Human&ndash;robot interaction is an integral part of this effort whenever people share the operating environment, including pilot-centric trajectory planning for autonomous aircraft near airports and virtual-reality studies of human interactions with multicopters.</p>
+    <section class="area thrust" id="verified">
+      <div>
+        <p class="kicker">Thrust 3</p>
+        <h3>Verified autonomy in the real world</h3>
+        <p>Guarantees are useful only if they hold on real vehicles, despite sensor noise, actuator limits, communication delays, and conditions not anticipated by the model. This thrust bridges theory and practice by developing realistic models for analysis and testing, and implementing controllers and planners on physical platforms. We validate our methods through indoor and outdoor experiments, high-fidelity simulation, and testing across a diverse range of autonomous systems, including ground robots, surface and underwater vehicles, small aerial robots, and fixed-wing UAVs.</p>
+        <p>The goal is to develop resilient autonomy that monitors its safety margins, remains robust to disturbances and uncertainty, and recovers when operating conditions exceed design assumptions. Human&ndash;robot interaction is an integral part of this effort whenever people share the operating environment, including pilot-centric trajectory planning for autonomous aircraft near airports and virtual-reality studies of human interactions with multicopters.</p>
+      </div>
+      <figure class="comic">
+        <img src="images/research/real-world-comic.jpg" alt="Four-panel comic set on rainy Italian streets in which Cooper and Diane reflect that the world is tidy in theory until it starts raining; Diane takes notes by a fountain, Cooper points at the wet ground, and the two sit at a cafe table" width="896" height="1195" loading="lazy">
+        <figcaption>The thrust in four panels: theory gives the courage to begin, and the real world teaches how to continue.</figcaption>
+      </figure>
     </section>
 
     <section class="area" id="projects">
