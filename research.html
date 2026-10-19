@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research | Venanzio Cichella</title>
-  <meta name="description" content="Research by Venanzio Cichella: resilient cooperative autonomy in complex environments, spanning learning and adaptation with guarantees, cooperative autonomy under uncertainty, and verified autonomy in the real world.">
+  <meta name="description" content="Research by Venanzio Cichella: resilient cooperative autonomy in complex environments, spanning reliable vehicle autonomy, cooperative autonomy, and verified autonomy.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -33,7 +33,7 @@
   <div class="wrap">
     <h1>Research</h1>
     <p class="lead">My team develops the control and decision-making foundations that allow teams of autonomous robots to remain reliable when their models, information, and operating environments cannot be trusted.</p>
-    <p class="meta">On this page: <a href="#vision">Vision</a> &middot; <a href="#adaptation">Learning and adaptation</a> &middot; <a href="#cooperation">Cooperative autonomy</a> &middot; <a href="#verified">Verified autonomy</a> &middot; <a href="#projects">Building the capability</a> &middot; <a href="#software">Software</a> &middot; <a href="#sponsors">Sponsors</a></p>
+    <p class="meta">On this page: <a href="#vision">Vision</a> &middot; <a href="#adaptation">Reliable vehicle autonomy</a> &middot; <a href="#cooperation">Cooperative autonomy</a> &middot; <a href="#verified">Verified autonomy</a> &middot; <a href="#projects">Building the capability</a> &middot; <a href="#software">Software</a> &middot; <a href="#sponsors">Sponsors</a></p>
 
     <section class="area" id="vision">
       <h2>The Vision</h2>
@@ -47,7 +47,7 @@
     <section class="area thrust" id="adaptation">
       <div>
         <p class="kicker">Thrust 1</p>
-        <h3>Learning and adaptation with guarantees</h3>
+        <h3>Reliable Vehicle Autonomy</h3>
         <p>A vehicle&rsquo;s dynamics change during a mission: payloads and environmental loads such as wind, currents, and waves vary, actuators saturate or behave nonlinearly, and operating conditions drift from those assumed at design time. This thrust develops adaptive and robust controllers, including L1 adaptive control, adaptive reference management, and robust output regulation, whose stability and performance properties are proved for explicitly stated classes of uncertainty.</p>
         <p>Learning enters where it improves speed or model fidelity, for example transformer networks that predict optimal trajectories in real time. We pair learned components with structure from control theory, such as Bernstein polynomial representations whose constraints can be checked directly, and we claim guarantees only where the analysis supports them.</p>
       </div>
@@ -56,7 +56,7 @@
     <section class="area thrust" id="cooperation">
       <div>
         <p class="kicker">Thrust 2</p>
-        <h3>Cooperative autonomy under uncertainty</h3>
+        <h3>Cooperative Autonomy</h3>
         <p>Heterogeneous teams of aerial, ground, and underwater vehicles must decide what to do and when, even though each vehicle&rsquo;s model is imperfect, sensing is partial, and communication links drop in and out. This thrust develops cooperative planning and control that connects team-level objectives, such as coverage, search, arrival timing, and separation, to motions each vehicle can actually execute.</p>
         <p>The framework couples three layers: optimal trajectory generation, time coordination over time-varying and directed communication networks, and decentralized collision avoidance with limited or intermittent measurements. Ongoing work addresses missions whose goals change during execution, coupling high-level decisions with motion planning.</p>
       </div>
@@ -65,7 +65,7 @@
     <section class="area thrust" id="verified">
       <div>
         <p class="kicker">Thrust 3</p>
-        <h3>Verified autonomy in the real world</h3>
+        <h3>Verified Autonomy</h3>
         <p>Guarantees are useful only if they hold on real vehicles, despite sensor noise, actuator limits, communication delays, and conditions not anticipated by the model. This thrust bridges theory and practice by developing realistic models for analysis and testing, and implementing controllers and planners on physical platforms. We validate our methods through indoor and outdoor experiments, high-fidelity simulation, and testing across a diverse range of autonomous systems, including ground robots, surface and underwater vehicles, small aerial robots, and fixed-wing UAVs.</p>
         <p>The goal is to develop resilient autonomy that monitors its safety margins, remains robust to disturbances and uncertainty, and recovers when operating conditions exceed design assumptions. Human&ndash;robot interaction is an integral part of this effort whenever people share the operating environment, including pilot-centric trajectory planning for autonomous aircraft near airports and virtual-reality studies of human interactions with multicopters.</p>
       </div>
@@ -74,7 +74,7 @@
     <section class="area capability" id="projects">
       <h2>How We Are Building the Capability</h2>
       <p>Each project below advances one thrust; together they move the program from guarantees for a single vehicle to resilient teams operating in the real world.</p>
-      <h3 class="group" id="build-adaptation"><span class="kicker">Thrust 1</span>Learning and adaptation with guarantees</h3>
+      <h3 class="group" id="build-adaptation"><span class="kicker">Thrust 1</span>Reliable Vehicle Autonomy</h3>
       <div class="feature">
         <p class="kicker">ONR</p>
         <h4>Adaptive maneuvering control of a generic submarine</h4>
@@ -101,7 +101,7 @@
         </figure>
       </div>
       <p class="meta">Learning-enabled trajectory generation, including the transformer policy that predicts optimal trajectories in real time, is part of <a href="#airports">Autonomous aircraft near airports</a> under Thrust&nbsp;3.</p>
-      <h3 class="group" id="build-cooperation"><span class="kicker">Thrust 2</span>Cooperative autonomy under uncertainty</h3>
+      <h3 class="group" id="build-cooperation"><span class="kicker">Thrust 2</span>Cooperative Autonomy</h3>
       <div class="feature">
         <p class="kicker">NSF &middot; ONR &middot; Amazon Research Award</p>
         <h4>Optimal multi-vehicle motion planning with Bernstein approximants</h4>
@@ -120,7 +120,7 @@
           <figcaption>A cooperative road-search mission for three UAVs, studied in simulation with the same framework.</figcaption>
         </figure>
       </div>
-      <h3 class="group" id="build-verified"><span class="kicker">Thrust 3</span>Verified autonomy in the real world</h3>
+      <h3 class="group" id="build-verified"><span class="kicker">Thrust 3</span>Verified Autonomy</h3>
       <div class="feature" id="airports">
         <p class="kicker">NASA &middot; NSF</p>
         <h4>Autonomous aircraft near airports</h4>
