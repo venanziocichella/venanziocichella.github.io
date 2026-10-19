@@ -32,7 +32,7 @@
 <main id="main">
   <div class="wrap">
     <h1>Research</h1>
-    <p class="lead">I develop the control and decision-making foundations that allow teams of autonomous robots to remain reliable when their models, information, and operating environments cannot be trusted.</p>
+    <p class="lead">My team develops the control and decision-making foundations that allow teams of autonomous robots to remain reliable when their models, information, and operating environments cannot be trusted.</p>
     <p>My research integrates adaptive control, cooperative decision-making, and safety assurance to enable reliable autonomy in uncertain environments. I develop the theoretical foundations, computational methods, and experimental validation needed to move from guarantees for individual robots to resilient coordination of heterogeneous autonomous teams.</p>
     <p class="meta">On this page: <a href="#adaptation">Learning and adaptation</a> &middot; <a href="#cooperation">Cooperative autonomy</a> &middot; <a href="#verified">Verified autonomy</a> &middot; <a href="#projects">Representative projects</a> &middot; <a href="#software">Software</a> &middot; <a href="#sponsors">Sponsors</a></p>
 
@@ -46,9 +46,6 @@
         <p>A vehicle&rsquo;s dynamics change during a mission: payloads and environmental loads such as wind, currents, and waves vary, actuators saturate or behave nonlinearly, and operating conditions drift from those assumed at design time. This thrust develops adaptive and robust controllers, including L1 adaptive control, adaptive reference management, and robust output regulation, whose stability and performance properties are proved for explicitly stated classes of uncertainty.</p>
         <p>Learning enters where it improves speed or model fidelity, for example transformer networks that predict optimal trajectories in real time. We pair learned components with structure from control theory, such as Bernstein polynomial representations whose constraints can be checked directly, and we claim guarantees only where the analysis supports them.</p>
       </div>
-      <figure class="comic">
-        <img src="images/research/learning-safety-comic.jpg" alt="Four-panel comic in which Cooper and Diane agree that a system should keep learning as the world changes, but never trade safety for a clever step; Cooper points at a car driving inside a glowing safe box, and Diane holds a chart labeled Safe Zones" width="1024" height="1024" loading="lazy">
-      </figure>
     </section>
 
     <section class="area thrust" id="cooperation">
@@ -58,9 +55,6 @@
         <p>Heterogeneous teams of aerial, ground, and underwater vehicles must decide what to do and when, even though each vehicle&rsquo;s model is imperfect, sensing is partial, and communication links drop in and out. This thrust develops cooperative planning and control that connects team-level objectives, such as coverage, search, arrival timing, and separation, to motions each vehicle can actually execute.</p>
         <p>The framework couples three layers: optimal trajectory generation, time coordination over time-varying and directed communication networks, and decentralized collision avoidance with limited or intermittent measurements. Ongoing work addresses missions whose goals change during execution, coupling high-level decisions with motion planning.</p>
       </div>
-      <figure class="comic">
-        <img src="images/research/cooperation-comic.jpg" alt="Four-panel comic in which Cooper and Diane reflect that cooperation does not require a shared language or history; Diane reads a compass, Cooper points at a maze-like map with an exit, and the two sit together studying a map" width="1024" height="1024" loading="lazy">
-      </figure>
     </section>
 
     <section class="area thrust" id="verified">
@@ -70,9 +64,6 @@
         <p>Guarantees are useful only if they hold on real vehicles, despite sensor noise, actuator limits, communication delays, and conditions not anticipated by the model. This thrust bridges theory and practice by developing realistic models for analysis and testing, and implementing controllers and planners on physical platforms. We validate our methods through indoor and outdoor experiments, high-fidelity simulation, and testing across a diverse range of autonomous systems, including ground robots, surface and underwater vehicles, small aerial robots, and fixed-wing UAVs.</p>
         <p>The goal is to develop resilient autonomy that monitors its safety margins, remains robust to disturbances and uncertainty, and recovers when operating conditions exceed design assumptions. Human&ndash;robot interaction is an integral part of this effort whenever people share the operating environment, including pilot-centric trajectory planning for autonomous aircraft near airports and virtual-reality studies of human interactions with multicopters.</p>
       </div>
-      <figure class="comic">
-        <img src="images/research/real-world-comic.jpg" alt="Four-panel comic set in an Italian piazza in which Cooper and Diane reflect that the world is tidy in theory until it starts raining; Cooper stands by a fountain, Diane studies a map on a bench, and the two read the map together" width="1024" height="1024" loading="lazy">
-      </figure>
     </section>
 
     <section class="area" id="projects">
