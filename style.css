@@ -204,3 +204,8 @@ details summary { cursor: pointer; color: var(--link); margin-bottom: .75rem; }
 .area h3.group { margin: 2.5rem 0 .35rem; font-size: 1.35rem; }
 h3.group .kicker { display: block; margin-bottom: .15rem; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
 .capability .feature h4 { font-size: 1.2rem; line-height: 1.25; }
+ul.grants { list-style: none; padding: 0; margin: 0; }
+ul.grants li { display: grid; grid-template-columns: 7.5rem 1fr; gap: .75rem; padding: .45rem 0; border-bottom: 1px solid var(--rule); }
+ul.grants li:last-child { border-bottom: 0; }
+ul.grants .when { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (max-width: 520px) { ul.grants li { grid-template-columns: 1fr; gap: .1rem; } }
