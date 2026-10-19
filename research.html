@@ -33,8 +33,13 @@
   <div class="wrap">
     <h1>Research</h1>
     <p class="lead">My team develops the control and decision-making foundations that allow teams of autonomous robots to remain reliable when their models, information, and operating environments cannot be trusted.</p>
-    <p>Our research integrates adaptive control, cooperative decision-making, and safety assurance to enable reliable autonomy in uncertain environments. We develop the theoretical foundations, computational methods, and experimental validation needed to move from guarantees for individual robots to resilient coordination of heterogeneous autonomous teams.</p>
-    <p class="meta">On this page: <a href="#adaptation">Learning and adaptation</a> &middot; <a href="#cooperation">Cooperative autonomy</a> &middot; <a href="#verified">Verified autonomy</a> &middot; <a href="#projects">Representative projects</a> &middot; <a href="#software">Software</a> &middot; <a href="#sponsors">Sponsors</a></p>
+    <p class="meta">On this page: <a href="#vision">Vision</a> &middot; <a href="#adaptation">Learning and adaptation</a> &middot; <a href="#cooperation">Cooperative autonomy</a> &middot; <a href="#verified">Verified autonomy</a> &middot; <a href="#projects">Building the capability</a> &middot; <a href="#software">Software</a> &middot; <a href="#sponsors">Sponsors</a></p>
+
+    <section class="area" id="vision">
+      <h2>The Vision</h2>
+      <p>The long-term vision is to enable autonomous teams that keep operating safely and effectively when the assumptions under which they were designed no longer hold: when vehicles are damaged, environments change, communications degrade, sensing becomes incomplete, or mission objectives evolve.</p>
+      <p>This matters now because autonomous vehicles are leaving controlled test ranges for shared airspace, congested ports, and contested waters, where these conditions are the norm rather than the exception. If this research succeeds, a damaged vehicle, a lost link, or a new objective becomes something a team adapts to, rather than a reason to abort the mission.</p>
+    </section>
 
     <h2 id="umbrella">Resilient Autonomy in Contested and Congested Environments</h2>
     <p>The program has three connected thrusts. Thrust&nbsp;1 makes individual vehicles dependable when their dynamics are uncertain. Thrust&nbsp;2 builds team-level coordination on those vehicle-level properties when information and communication are also unreliable. Thrust&nbsp;3 tests both on hardware and in realistic conditions, and the gaps it exposes become new questions for the theory.</p>
@@ -66,64 +71,79 @@
       </div>
     </section>
 
-    <section class="area" id="projects">
-      <h2>Representative projects</h2>
-      <div class="feature">
-        <p class="kicker">NSF &middot; ONR &middot; Amazon Research Award</p>
-        <h3>Optimal multi-vehicle motion planning with Bernstein approximants</h3>
-        <p>Multi-vehicle motion planning is posed as a continuous-time optimal control problem and solved with Bernstein polynomial approximations, which make speed, turn-rate, inter-vehicle separation, and obstacle constraints cheap to enforce over the whole trajectory. The paper proves that the discretized solutions converge to the continuous-time optimum, and the method is implemented in the open-source <a href="https://github.com/caslabuiowa/BeBOT">BeBOT</a> toolkit. With an Amazon Research Award, the work extends to optimal control and concurrent task allocation and planning for large-scale multi-robot systems. <a href="https://doi.org/10.1109/TAC.2020.2999329">Cichella, Kaminer, Walton, Hovakimyan, and Pascoal, <em>IEEE Transactions on Automatic Control</em>, 2020</a></p>
-        <figure>
-          <img src="images/research/bebot-swarm-caslab.gif" alt="Animation of 100 vehicles flying curved trajectories from a random start into formations spelling the letters C, A, S, L, A, B" width="800" height="450" loading="lazy">
-          <figcaption>A swarm of 100 vehicles flying curved trajectories between formations that spell CASLAB.</figcaption>
-        </figure>
-      </div>
-
+    <section class="area capability" id="projects">
+      <h2>How We Are Building the Capability</h2>
+      <p>Each project below advances one thrust; together they move the program from guarantees for a single vehicle to resilient teams operating in the real world.</p>
+      <h3 class="group" id="build-adaptation"><span class="kicker">Thrust 1</span>Learning and adaptation with guarantees</h3>
+      <p class="proves">What this proves: a single vehicle keeps its stability and tracking guarantees when its dynamics, loads, and reference signals change.</p>
       <div class="feature">
         <p class="kicker">ONR</p>
-        <h3>Adaptive maneuvering control of a generic submarine</h3>
+        <h4>Adaptive maneuvering control of a generic submarine</h4>
         <p>Path-following and trajectory-tracking guidance laws, built on an inner-loop adaptive controller, steer a generic submarine along three-dimensional paths. The design uses a reduced-order model that is built and validated from computational fluid dynamics and accounts for the depth and wave effects that dominate near the free surface. <a href="https://doi.org/10.1016/j.conengprac.2023.105792">MacLin, Hammond, Cichella, and Martin, <em>Control Engineering Practice</em>, 2024</a></p>
         <figure>
           <video src="images/research/camera-planes.mp4" poster="images/research/camera-planes-poster.jpg" width="1280" height="694" autoplay muted loop playsinline controls preload="metadata" aria-label="Simulation of the yellow BB2 submarine maneuvering near the seabed, viewed from a camera behind the hull"></video>
           <figcaption>Simulation of the Joubert BB2 maneuvering with the lab&rsquo;s reduced-order model.</figcaption>
         </figure>
       </div>
-
       <div class="feature">
-        <p class="kicker">ONR</p>
-        <h3>Safe coordinated maneuvering of multirotor teams</h3>
-        <p>A cooperative control framework combines trajectory generation, time-critical coordination over time-varying networks, and path following, with analytical conditions for coordination and inter-vehicle safety. The coordination laws were demonstrated in indoor flight tests with two quadrotors, and full multi-vehicle missions were evaluated in simulation. <a href="https://ieeexplore.ieee.org/document/7515324">Cichella et al., <em>IEEE Control Systems Magazine</em>, 2016</a></p>
-        <figure>
-          <img src="images/research/multi-uav.jpg" alt="Three UAVs cooperatively searching a mountain road, with their flight paths overlaid on a satellite map" width="1200" height="546" loading="lazy">
-          <figcaption>A cooperative road-search mission for three UAVs, studied in simulation with the same framework.</figcaption>
-        </figure>
-      </div>
-
-      <div class="feature">
-        <h3>PDE-based optimal control with Bernstein surfaces</h3>
-        <p>Many systems are governed by partial differential equations rather than ordinary ones, such as soft continuum robots whose shape evolves in both space and time. This work extends the Bernstein approach to these problems: Bernstein surfaces approximate the solution in space and time, so constraints on the shape, its curvature, and the surrounding obstacles can be enforced over the whole domain. It has been applied to path planning for continuum rods, to constrained planning for soft continuum robots, and to large multi-agent teams modeled as a continuum. The same formulation applies to shape-morphing robots: the body itself is a Bernstein-parameterized surface whose control points are optimized, so a robot can be steered between target shapes while keeping its deformation smooth, feasible, and clear of obstacles. <a href="https://doi.org/10.1109/OJCSYS.2025.3617288">Hammond, Lovett, Pugliese, Cichella, and Lamuta, <em>IEEE Open Journal of Control Systems</em>, 2025</a>; <a href="https://doi.org/10.1109/RoboSoft60065.2024.10521951">Hammond et al., IEEE RoboSoft 2024</a>; <a href="https://doi.org/10.1109/CDC57313.2025.11312044">Hammond et al., IEEE CDC 2025</a></p>
-        <figure>
-          <img src="images/research/flubber.jpg" alt="Film still of Robin Williams holding a green, shape-shifting blob of Flubber in his hand" width="800" height="447" loading="lazy">
-          <figcaption>The goal, in film form: Flubber, a body that can take any shape. Shape-morphing robots need controllers that plan over the whole surface, not just a few joints. Still from <em>Flubber</em> (Disney, 1997).</figcaption>
-        </figure>
-      </div>
-
-      <div class="feature">
-        <h3>Polynomial internal model principle-based control</h3>
+        <h4>Polynomial internal model principle-based control</h4>
         <p>In collaboration with Prof. Lorenzo Marconi at the University of Bologna, we develop controllers based on the internal model principle (IMP) in which the exosystem generating references and disturbances is a polynomial. Polynomial internal models give robust output regulation for signals that classical exosystems cannot generate, including Bernstein/B&eacute;zier and other unstructured signals over a finite horizon. This makes the approach a natural fit for function approximation, for tracking trajectories produced by motion planners, and for model predictive control. <a href="https://doi.org/10.1109/LCSYS.2026.3706322">Cichella, Lovett, Bin, Mimmo, and Marconi, <em>IEEE Control Systems Letters</em>, 2026</a>; Cichella, Mimmo, and Marconi, ACC 2026; Mimmo, Cichella, and Marconi, IEEE CDC 2026</p>
         <figure>
           <img src="images/research/tango.jpg" alt="Illustration of a couple dancing tango along a curve r(t), with a cubic polynomial p(t) and its control points traced alongside over the interval t in [0, T]" width="1264" height="848" loading="lazy">
           <figcaption>Learning the rhythm. Robust tracking requires more than reacting to a moving target: the controller must internalize the patterns that generate its motion, allowing it to anticipate and follow the rhythm.</figcaption>
         </figure>
       </div>
-
       <div class="feature">
+        <h4>PDE-based optimal control with Bernstein surfaces</h4>
+        <p>Many systems are governed by partial differential equations rather than ordinary ones, such as soft continuum robots whose shape evolves in both space and time. This work extends the Bernstein approach to these problems: Bernstein surfaces approximate the solution in space and time, so constraints on the shape, its curvature, and the surrounding obstacles can be enforced over the whole domain. It has been applied to path planning for continuum rods, to constrained planning for soft continuum robots, and to large multi-agent teams modeled as a continuum. The same formulation applies to shape-morphing robots: the body itself is a Bernstein-parameterized surface whose control points are optimized, so a robot can be steered between target shapes while keeping its deformation smooth, feasible, and clear of obstacles. <a href="https://doi.org/10.1109/OJCSYS.2025.3617288">Hammond, Lovett, Pugliese, Cichella, and Lamuta, <em>IEEE Open Journal of Control Systems</em>, 2025</a>; <a href="https://doi.org/10.1109/RoboSoft60065.2024.10521951">Hammond et al., IEEE RoboSoft 2024</a>; <a href="https://doi.org/10.1109/CDC57313.2025.11312044">Hammond et al., IEEE CDC 2025</a></p>
+        <figure>
+          <img src="images/research/flubber.jpg" alt="Film still of Robin Williams holding a green, shape-shifting blob of Flubber in his hand" width="800" height="447" loading="lazy">
+          <figcaption>The goal, in film form: Flubber, a body that can take any shape. Shape-morphing robots need controllers that plan over the whole surface, not just a few joints. Still from <em>Flubber</em> (Disney, 1997).</figcaption>
+        </figure>
+      </div>
+      <p class="meta">Learning-enabled trajectory generation, including the transformer policy that predicts optimal trajectories in real time, is part of <a href="#airports">Autonomous aircraft near airports</a> under Thrust&nbsp;3.</p>
+      <h3 class="group" id="build-cooperation"><span class="kicker">Thrust 2</span>Cooperative autonomy under uncertainty</h3>
+      <p class="proves">What this proves: vehicle-level guarantees carry over to coordinated teams, from two quadrotors to swarms of a hundred vehicles.</p>
+      <div class="feature">
+        <p class="kicker">NSF &middot; ONR &middot; Amazon Research Award</p>
+        <h4>Optimal multi-vehicle motion planning with Bernstein approximants</h4>
+        <p>Multi-vehicle motion planning is posed as a continuous-time optimal control problem and solved with Bernstein polynomial approximations, which make speed, turn-rate, inter-vehicle separation, and obstacle constraints cheap to enforce over the whole trajectory. The paper proves that the discretized solutions converge to the continuous-time optimum, and the method is implemented in the open-source <a href="https://github.com/caslabuiowa/BeBOT">BeBOT</a> toolkit. With an Amazon Research Award, the work extends to optimal control and concurrent task allocation and planning for large-scale multi-robot systems. <a href="https://doi.org/10.1109/TAC.2020.2999329">Cichella, Kaminer, Walton, Hovakimyan, and Pascoal, <em>IEEE Transactions on Automatic Control</em>, 2020</a></p>
+        <figure>
+          <img src="images/research/bebot-swarm-caslab.gif" alt="Animation of 100 vehicles flying curved trajectories from a random start into formations spelling the letters C, A, S, L, A, B" width="800" height="450" loading="lazy">
+          <figcaption>A swarm of 100 vehicles flying curved trajectories between formations that spell CASLAB.</figcaption>
+        </figure>
+      </div>
+      <div class="feature">
+        <p class="kicker">ONR</p>
+        <h4>Safe coordinated maneuvering of multirotor teams</h4>
+        <p>A cooperative control framework combines trajectory generation, time-critical coordination over time-varying networks, and path following, with analytical conditions for coordination and inter-vehicle safety. The coordination laws were demonstrated in indoor flight tests with two quadrotors, and full multi-vehicle missions were evaluated in simulation. <a href="https://ieeexplore.ieee.org/document/7515324">Cichella et al., <em>IEEE Control Systems Magazine</em>, 2016</a></p>
+        <figure>
+          <img src="images/research/multi-uav.jpg" alt="Three UAVs cooperatively searching a mountain road, with their flight paths overlaid on a satellite map" width="1200" height="546" loading="lazy">
+          <figcaption>A cooperative road-search mission for three UAVs, studied in simulation with the same framework.</figcaption>
+        </figure>
+      </div>
+      <h3 class="group" id="build-verified"><span class="kicker">Thrust 3</span>Verified autonomy in the real world</h3>
+      <p class="proves">What this proves: the methods hold on hardware, against realistic models, and alongside the people who share the operating environment.</p>
+      <div class="feature" id="airports">
         <p class="kicker">NASA &middot; NSF</p>
-        <h3>Autonomous aircraft near airports</h3>
+        <h4>Autonomous aircraft near airports</h4>
         <p>With NASA, my group develops trajectory optimization for aircraft approaching and leaving airports, including pilot-centric planning for autonomous final approach and learning-based trajectory generation fast enough to run in real time. <a href="https://doi.org/10.2514/6.2025-3269">MacLin et al., AIAA Aviation 2025</a></p>
         <figure>
           <img src="images/research/pilot-aware-airspace-slide.jpg" alt="Overview slide titled Pilot-Aware Motion Planning for Safe Human-Autonomy Airspace Integration, with three columns: the challenge of dense operations near airports, a pipeline from pilot-aware optimal control through a Bernstein solver and transformer policy to guaranteed safe learning, and validation with pilots at NASA's Remote Operations for Autonomous Missions facility" width="1600" height="900" loading="lazy">
           <figcaption>Pilot-aware motion planning: optimal control with a Bernstein solver, a transformer policy for real-time use, and pilot evaluations that feed back into the models.</figcaption>
         </figure>
+      </div>
+      <div class="feature">
+        <h4>Experimental validation on physical vehicles</h4>
+        <p>Controllers and planners from the first two thrusts are implemented on hardware in the CAS Lab, whose motion capture system gives sub-millimeter position data for quadrotor UAVs and ground robots, and in outdoor experiments. Testing spans ground robots, surface and underwater vehicles, small aerial robots, and fixed-wing UAVs, and includes indoor flight tests of the time-coordination laws on two quadrotors and flight tests of thermal centering control for autonomous soaring. <a href="https://ieeexplore.ieee.org/document/7515324">Cichella et al., <em>IEEE Control Systems Magazine</em>, 2016</a>; <a href="https://arc.aiaa.org/doi/10.2514/1.51691">Andersson, Kaminer, Dobrokhodov, and Cichella, <em>AIAA Journal of Guidance, Control, and Dynamics</em>, 2012</a>. Videos are on the <a href="https://www.youtube.com/channel/UCe_cA6GRcbHIWaK9jUkip0w">lab YouTube channel</a>.</p>
+      </div>
+      <div class="feature">
+        <h4>A validated model of the Joubert BB2 submarine</h4>
+        <p>Underwater controllers cannot be tested freely at sea, so we built a reduced-order model of the Joubert BB2 generic submarine from computational fluid dynamics, including the depth and wave effects that dominate near the free surface. The model is the test bed for the adaptive maneuvering work in Thrust&nbsp;1 and is released with <a href="https://github.com/caslabuiowa/IowaBB2model">Simulink and MATLAB implementations</a>. <a href="https://doi.org/10.1016/j.conengprac.2023.105792">MacLin, Hammond, Cichella, and Martin, <em>Control Engineering Practice</em>, 2024</a></p>
+      </div>
+      <div class="feature">
+        <h4>Human&ndash;autonomy studies</h4>
+        <p>When people share the operating environment, safety depends on how they perceive and respond to the vehicles. We study this directly: pilot-centric trajectory planning for autonomous aircraft is evaluated with pilots at NASA&rsquo;s Remote Operations for Autonomous Missions facility, and virtual-reality environments are used to study how people interact with small multicopters flying nearby, including in a residential setting. <a href="https://ieeexplore.ieee.org/document/7504790">Marinho et al., IEEE Virtual Reality 2016</a>; <a href="https://doi.org/10.1007/978-3-319-60384-1_33">Widdowson et al., AHFE 2017</a></p>
       </div>
     </section>
 
