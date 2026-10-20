@@ -127,6 +127,14 @@
         </figure>
       </div>
       <h3 class="group" id="build-verified"><span class="kicker">Thrust 3</span>Verified Autonomy</h3>
+      <div class="feature">
+        <h4>Learning-enabled planning and control</h4>
+        <p>Robot foundation models, such as vision-language-action (VLA) models, map images and instructions directly to motion, and a safety filter is the usual way to keep that motion safe. We argue that the filter&rsquo;s guarantee holds only if its trusted inputs, namely the goal set, the obstacle set, and the fallback, are independent of the model. In an end-to-end VLA, the goal and the obstacles are extracted by the network the filter is meant to guard, so a compromised model also controls the inputs. When the inputs are independent, the model can be treated as untrusted. For a trajectory filter on piecewise Bernstein polynomials, the model&rsquo;s proposal enters only the filter&rsquo;s cost, so every proposal yields a certified trajectory or a certified fallback, and a compromised model can only reduce performance while geometric safety is preserved. We organize the remaining failure modes by threat source: a missed obstacle breaks the certificate, a false obstacle only reduces availability, and the model can still undermine the filter&rsquo;s assumptions through chattering and forced infeasibility. The fallback, finally, must be designed for each embodiment. Bhaskar et al., <em>Conference on Robot Learning (CoRL)</em>, 2026</p>
+        <figure>
+          <img src="images/research/polyfusion-pipeline.jpg" alt="PolyFusion pipeline: a language objective, perception of object poses and obstacle volumes, grasp affordances, a trained policy sampling candidate trajectories, a safety stage that verifies Bernstein-polynomial trajectories with GJK and de Casteljau and projects unsafe ones with a QP, and hardware execution of a pick-and-place task on a robot arm" width="1600" height="1017" loading="lazy">
+          <figcaption>The PolyFusion pipeline: perception supplies obstacle volumes and goal poses independently of the policy, the policy samples candidate trajectories, and a Bernstein-polynomial safety stage verifies or projects them before execution on hardware. From <em>PolyFusion: Collision-Free Robot Learning using Bernstein Polynomials</em> by Amisha Bhaskar, Gage MacLin, Camilla Tabasso, Leo Lin, Pratap Tokekar, Venanzio Cichella, Joshua Migdal, Tye Brady, and Taskin Padir, accepted to CoRL 2026.</figcaption>
+        </figure>
+      </div>
       <div class="feature" id="airports">
         <p class="kicker">NASA &middot; NSF</p>
         <h4>Human&ndash;autonomy studies</h4>
@@ -134,14 +142,6 @@
         <figure>
           <img src="images/research/pilot-aware-airspace-slide.jpg" alt="Overview slide titled Pilot-Aware Motion Planning for Safe Human-Autonomy Airspace Integration, with three columns: the challenge of dense operations near airports, a pipeline from pilot-aware optimal control through a Bernstein solver and transformer policy to guaranteed safe learning, and validation with pilots at NASA's Remote Operations for Autonomous Missions facility" width="1600" height="900" loading="lazy">
           <figcaption>Pilot-aware motion planning: optimal control with a Bernstein solver, a transformer policy for real-time use, and pilot evaluations that feed back into the models.</figcaption>
-        </figure>
-      </div>
-      <div class="feature">
-        <h4>Learning-enabled planning and control</h4>
-        <p>Robot foundation models, such as vision-language-action (VLA) models, map images and instructions directly to motion, and a safety filter is the usual way to keep that motion safe. We argue that the filter&rsquo;s guarantee holds only if its trusted inputs, namely the goal set, the obstacle set, and the fallback, are independent of the model. In an end-to-end VLA, the goal and the obstacles are extracted by the network the filter is meant to guard, so a compromised model also controls the inputs. When the inputs are independent, the model can be treated as untrusted. For a trajectory filter on piecewise Bernstein polynomials, the model&rsquo;s proposal enters only the filter&rsquo;s cost, so every proposal yields a certified trajectory or a certified fallback, and a compromised model can only reduce performance while geometric safety is preserved. We organize the remaining failure modes by threat source: a missed obstacle breaks the certificate, a false obstacle only reduces availability, and the model can still undermine the filter&rsquo;s assumptions through chattering and forced infeasibility. The fallback, finally, must be designed for each embodiment. Bhaskar et al., CoRL 2026</p>
-        <figure>
-          <img src="images/research/polyfusion-pipeline.jpg" alt="PolyFusion pipeline: a language objective, perception of object poses and obstacle volumes, grasp affordances, a trained policy sampling candidate trajectories, a safety stage that verifies Bernstein-polynomial trajectories with GJK and de Casteljau and projects unsafe ones with a QP, and hardware execution of a pick-and-place task on a robot arm" width="1600" height="1017" loading="lazy">
-          <figcaption>The PolyFusion pipeline: perception supplies obstacle volumes and goal poses independently of the policy, the policy samples candidate trajectories, and a Bernstein-polynomial safety stage verifies or projects them before execution on hardware. From <em>PolyFusion: Collision-Free Robot Learning using Bernstein Polynomials</em> (Bhaskar, MacLin, Tabasso, Lin, Tokekar, Cichella, Migdal, Brady, and Padir), accepted to CoRL 2026.</figcaption>
         </figure>
       </div>
       <div class="feature">
