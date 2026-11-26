@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>MOCKUP – Minimal academic | Venanzio Cichella</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a1a;--muted:#6b6b6b;--rule:#e6e6e6;--accent:#9e1b1f;--max:640px}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:20px/1.6 "EB Garamond",Georgia,serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(158,27,31,.25)}
+a:hover{border-bottom-color:var(--accent)}
+.ribbon{font:600 12px/1 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px;background:#faf3f3;color:var(--accent)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+header{padding:56px 0 0}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;font-variant:small-caps;letter-spacing:.06em;font-size:18px}
+nav a{color:var(--muted);border:0}
+nav a[aria-current]{color:var(--ink)}
+.intro{display:grid;grid-template-columns:1fr 150px;gap:32px;align-items:start;margin:56px 0 8px}
+h1{font-weight:500;font-size:44px;line-height:1.1;margin:0 0 6px;letter-spacing:-.01em}
+.title{color:var(--muted);font-style:italic;margin:0 0 22px}
+.intro img{width:150px;height:150px;object-fit:cover;filter:grayscale(1);border-radius:2px}
+p{margin:0 0 16px}
+.links{font-variant:small-caps;letter-spacing:.05em;margin-top:6px}
+.links a{margin-right:16px}
+h2{font-variant:small-caps;letter-spacing:.08em;font-weight:500;font-size:20px;color:var(--accent);margin:56px 0 14px;padding-top:18px;border-top:1px solid var(--rule)}
+ol.thrusts{margin:0;padding:0;list-style:none;counter-reset:t}
+ol.thrusts li{counter-increment:t;padding-left:34px;position:relative;margin-bottom:14px}
+ol.thrusts li::before{content:counter(t,upper-roman)".";position:absolute;left:0;color:var(--muted)}
+ol.thrusts b{font-weight:600}
+figure{margin:26px 0 8px}
+figure img{width:100%;display:block}
+figcaption{font-size:16px;color:var(--muted);font-style:italic;margin-top:8px}
+dl{display:grid;grid-template-columns:110px 1fr;gap:10px 18px;margin:0}
+dt{color:var(--muted);font-variant-numeric:oldstyle-nums;font-size:18px;padding-top:2px}
+dd{margin:0}
+dd small{display:block;color:var(--muted);font-size:17px;line-height:1.5}
+.more{font-style:italic;margin-top:14px}
+footer{margin:72px 0 48px;padding-top:18px;border-top:1px solid var(--rule);color:var(--muted);font-size:16px}
+@media (max-width:640px){
+  body{font-size:18.5px}
+  header{padding-top:28px}
+  .wrap{padding:0 18px}
+  .intro{grid-template-columns:1fr;gap:18px;margin-top:32px}
+  .intro img{width:104px;height:104px;order:-1}
+  h1{font-size:36px}
+  dl{grid-template-columns:78px 1fr}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">Mockup · “Minimal academic” style · not the live site</div>
+<div class="wrap">
+<header>
+  <nav aria-label="Main"><ul>
+    <li><a href="#" aria-current="page">home</a></li>
+    <li><a href="../research.html">research</a></li>
+    <li><a href="../publications.html">publications</a></li>
+    <li><a href="../teaching.html">teaching</a></li>
+    <li><a href="../lab.html">lab</a></li>
+    <li><a href="../news.html">news</a></li>
+    <li><a href="../contact.html">contact</a></li>
+  </ul></nav>
+</header>
+
+<main>
+  <div class="intro">
+    <div>
+      <h1>Venanzio Cichella</h1>
+      <p class="title">Associate Professor of Mechanical Engineering, University of Iowa</p>
+    </div>
+    <img src="../images/venanzio.jpg" alt="Portrait of Venanzio Cichella">
+  </div>
+
+  <p>I work on planning and control for teams of autonomous vehicles. My research, under the theme of <em>resilient autonomy</em>, spans cooperative control, collision avoidance, optimal control, machine learning, and human-centered design of autonomous vehicles.</p>
+  <p>I direct the <a href="../lab.html">Cooperative Autonomous Systems Lab</a>, where my students and I take these methods from theory to experiments on real robots.</p>
+  <p class="links"><a href="https://scholar.google.com/citations?hl=en&amp;user=tYQR_0MAAAAJ">scholar</a><a href="https://www.researchgate.net/profile/Venanzio-Cichella">researchgate</a><a href="https://github.com/venanziocichella">github</a><a href="mailto:venanzio-cichella@uiowa.edu">email</a></p>
+
+  <h2>Research</h2>
+  <p>Resilient autonomy in contested and congested environments, in three connected thrusts:</p>
+  <ol class="thrusts">
+    <li><b><a href="../research.html#adaptation">Reliable vehicle autonomy.</a></b> Adaptive and robust control of vehicles with uncertain dynamics.</li>
+    <li><b><a href="../research.html#cooperation">Cooperative autonomy.</a></b> Optimal multi-vehicle motion planning with Bernstein approximants.</li>
+    <li><b><a href="../research.html#verified">Verified autonomy.</a></b> Learning-enabled planning, human&ndash;autonomy studies, and experiments on physical vehicles.</li>
+  </ol>
+  <figure>
+    <img src="../images/research/thrusts-vignette.jpg" alt="Three-panel sketch of the three research thrusts">
+    <figcaption>From a single reliable vehicle, to a cooperating team, to teams working with humans in the real world.</figcaption>
+  </figure>
+
+  <h2>News</h2>
+  <dl>
+    <dt>Oct 2026</dt><dd>New three-year NSF award on safe AI for autonomous underwater vehicle decision making and motion planning. <a href="https://now.uiowa.edu/news/2026/10/ui-professor-looks-develop-formula-quicker-response-self-driving-underwater-vehicles">Iowa Now</a></dd>
+    <dt>Sep 2026</dt><dd>Invited talk on resilient field autonomy, Colorado State University.</dd>
+    <dt>2026</dt><dd>Best Paper Award in Soft Smart Materials, <em>Smart Materials and Structures</em>, with A. Fahim Golestaneh and C. Lamuta.</dd>
+    <dt>2026</dt><dd><em>Bernstein/Bézier Polynomials in Control, Estimation, and Planning</em>, with Kaminer, Pascoal, and Hovakimyan, forthcoming from Springer Nature (2027).</dd>
+  </dl>
+  <p class="more"><a href="../news.html">All news</a></p>
+
+  <h2>Appointments &amp; education</h2>
+  <dl>
+    <dt>2024&ndash;</dt><dd>Associate Professor, Mechanical Engineering, University of Iowa</dd>
+    <dt>2025</dt><dd>Visiting Professor, University of Bologna</dd>
+    <dt>2020&ndash;</dt><dd>Faculty Research Engineer, IIHR&ndash;Hydroscience &amp; Engineering</dd>
+    <dt>2018&ndash;24</dt><dd>Assistant Professor, University of Iowa</dd>
+    <dt>2018</dt><dd>PhD, Mechanical Engineering, University of Illinois Urbana-Champaign<small>“Planning and Control of Cooperative Autonomous Systems,” advised by Naira Hovakimyan</small></dd>
+    <dt>2011</dt><dd>MS, Automation Engineering, University of Bologna</dd>
+  </dl>
+
+  <h2>Honors</h2>
+  <dl>
+    <dt>2026</dt><dd>Best Paper Award, <em>Smart Materials and Structures</em></dd>
+    <dt>2024</dt><dd>MechSE Outstanding Young Alumni Award, UIUC</dd>
+    <dt>2022</dt><dd>Amazon Research Award</dd>
+    <dt>2022</dt><dd>Best Paper Award, ASEE Annual Conference</dd>
+  </dl>
+</main>
+
+<footer>© 2026 Venanzio Cichella · College of Engineering, The University of Iowa</footer>
+</div>
+</body>
+</html>
